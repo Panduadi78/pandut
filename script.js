@@ -36,3 +36,47 @@ if (username) {
 } else {
     welcomeMessage.textContent = "Welcome to the website";
 }
+
+    function saveUsername() {
+        const username = document.getElementById('usernameInput').value;
+        if (username) {
+            localStorage.setItem('username', username); 
+            window.location.href = "h2.html"; 
+        } else {
+            alert("Please enter a username.");
+        }
+    }
+
+    document.querySelector('.cta-btn').addEventListener('click', function() {
+        const logoutMenu = document.getElementById('logoutMenu');
+        logoutMenu.style.display = logoutMenu.style.display === 'none' ? 'block' : 'none'; // Toggle menu logout
+    });
+    
+    function logout() {
+        localStorage.removeItem('username'); // Menghapus username dari local storage
+        window.location.href = "index.html"; // Mengarahkan ke halaman login
+    }
+    
+    
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    }
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    function toggleServiceInfo(index) {
+        const serviceInfo = document.querySelectorAll('.service-info');
+        const activeInfo = serviceInfo[index];
+        activeInfo.classList.toggle('show-info');
+        setTimeout(() => {
+            activeInfo.classList.remove('show-info');
+        }, 3000); 
+    }
+    

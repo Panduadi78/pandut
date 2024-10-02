@@ -13,7 +13,7 @@
     <header>
             <nav class="navbar">
                 <div class="logo">Pandu</div>
-                <ul class="nav-links left">
+                <ul class="nav-links">
                     <li><a href="#home" class="nav-item">Home</a></li>
                     <li><a href="#about" class="nav-item">About</a></li>
                     <li><a href="#services" class="nav-item">Services</a></li>
@@ -35,6 +35,9 @@
             </h1>
             <p>Explore the amazing journey with us!</p>
             <a href="#about" class="cta-btn">Get Started</a>
+            <div class="logout-menu" id="logoutMenu">
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
         </div>
     </section>
 
@@ -82,24 +85,33 @@
         <div class="container">
             <h2>Our Services</h2>
             <div class="service-cards">
-                <div class="card">
+                <div class="card" onclick="toggleServiceInfo(0)">
                     <i class="fas fa-code card-icon"></i>
                     <h3>Web Development</h3>
                     <p>We create high-performing and visually stunning websites tailored to your needs.</p>
+                    <div class="service-info">
+                        <p>Our web development services offer scalable solutions with cutting-edge technologies, ensuring a strong online presence for your business.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="toggleServiceInfo(1)">
                     <i class="fas fa-mobile-alt card-icon"></i>
                     <h3>Mobile App</h3>
                     <p>Our mobile apps are designed to provide a seamless experience across devices.</p>
+                    <div class="service-info">
+                        <p>Our mobile app solutions are built for both Android and iOS platforms, focusing on user experience and performance optimization.</p>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" onclick="toggleServiceInfo(2)">
                     <i class="fas fa-paint-brush card-icon"></i>
                     <h3>Branding</h3>
                     <p>We help you establish a strong brand identity that resonates with your audience.</p>
+                    <div class="service-info">
+                        <p>Our branding services ensure that your business communicates its values effectively through design, messaging, and market positioning.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>   
 <!-- footer -->
 <footer id="contact">
     <div class="container">
@@ -131,8 +143,6 @@
         </div>
         </div>
         </div>
-           
-
         <div class="footer-bottom">
             <p>&copy; 2024 Pandu | All Rights Reserved</p>
         </div>
@@ -140,4 +150,5 @@
 </footer>
     <script src="script.js"></script>
 </body>
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 </html>

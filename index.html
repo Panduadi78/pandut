@@ -4,46 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Username</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 80%;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="container">
         <h1>Input Username</h1>
-        <input type="text" id="usernameInput" placeholder="Enter your username">
+        <input type="text" id="usernameInput" placeholder="Enter your username" autofocus>
         <button onclick="saveUsername()">Submit</button>
     </div>
 
@@ -51,8 +17,8 @@
         function saveUsername() {
             const username = document.getElementById('usernameInput').value;
             if (username) {
-                localStorage.setItem('username', username); // Simpan username ke localStorage
-                window.location.href = "h2.html"; // Redirect ke halaman welcome
+                localStorage.setItem('username', username); 
+                window.location.href = "h2.html"; 
             } else {
                 alert("Please enter a username.");
             }
